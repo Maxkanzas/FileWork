@@ -13,15 +13,15 @@ public class FileWorkTest {
 
     @Test
     void zipFileParsingTest() throws Exception{
-        try (ZipInputStream zis = new ZipInputStream(cl.getResourceAsStream("Archive.zip")))
-        {
-        ZipEntry entry;
-        while ((entry = zis.getNextEntry()) != null){
-            System.out.println(entry.getName());
-            }
-            if (entry.getName().contains(".pdf")) {
-                PDF pdf = new PDF(zis);
-                assertThat(pdf, containsText("ИНН 6324016308 КПП 632101001"));
+        try (ZipInputStream zis = new ZipInputStream(cl.getResourceAsStream("Archive.zip"))) {
+            ZipEntry entry;
+            while ((entry = zis.getNextEntry()) != null) {
+                System.out.println(entry.getName());
+                if (entry.getName().contains(".pdf")) {
+                    PDF pdf = new PDF(zis);
+                    assertThat(pdf, containsText("ИНН 6324016308 КПП 632101001"));
+                    break;
+                }
             }
         }
     }

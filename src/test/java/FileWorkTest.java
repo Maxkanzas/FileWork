@@ -3,14 +3,12 @@ import com.codeborne.xlstest.XLS;
 import com.opencsv.CSVReader;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import java.io.File;
 import java.io.InputStreamReader;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 import static com.codeborne.pdftest.PDF.containsText;
-import static org.apache.poi.xssf.usermodel.XSSFWorkbookType.XLSX;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class FileWorkTest {
